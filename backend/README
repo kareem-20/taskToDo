@@ -1,0 +1,13 @@
+end points 
+
+# to add ToDo
+## POST http://localhost:3000/api/todos/add
+
+# to get todos by user id
+## GET http://localhost:3000/api/todos/${{userId}}
+
+# to update todo
+## PATCH http://localhost:3000/api/todos/update/${{todoId}}
+
+# to delete todo
+## DELETE http://localhost:3000/api/todos/delete/${{todoId}}

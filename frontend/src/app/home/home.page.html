@@ -1,20 +1,60 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      Hi {{userdata?.userName}}
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="filter" shape="round" fill="solid" color="danger" (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-row class="ion-justify-content-center" *ngIf="todos">
+    <ion-col size="12" size-sm="12" size-md="6">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <ion-card *ngFor="let todo of todos; let i = index">
+        <ion-item lines="none">
+          <div class="index" slot="start">
+            {{i + 1}}
+          </div>
+          <ion-label (click)="detail(todo)">
+            <h2>
+              <ion-text>
+                {{todo.title}}
+              </ion-text>
+            </h2>
+            <p>
+              <ion-text>
+                {{todo.desc}}
+              </ion-text>
+            </p>
+          </ion-label>
+
+          <ion-button fill="clear" (click)="delete(todo,i)" color="danger" slot="end">
+            <ion-icon name="trash" slot="icon-only"></ion-icon>
+          </ion-button>
+
+
+          <ion-button fill="clear" (click)="edit(i,todo)" color="secondary" slot="end">
+            <ion-icon name="create" slot="icon-only"></ion-icon>
+          </ion-button>
+
+        </ion-item>
+      </ion-card>
+
+    </ion-col>
+  </ion-row>
+
+  <!-- fab -->
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button (click)="creatTodo()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
 </ion-content>

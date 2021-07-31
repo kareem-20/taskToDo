@@ -1,0 +1,42 @@
+### HOME
+GET http://localhost:3000/api
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTA1OGE2ZjJhZTM0MzM2Y2M2N2YxMWEiLCJpYXQiOjE2Mjc3NTMwNzIsImV4cCI6MTYyNzgzOTQ3Mn0.qeA4Y7XSVMXQfe7BGIRGOOOMW2ExLjtmoQM42x0dGcs
+
+### REGISTER
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "userName":"kareem",
+    "email":"test@gmail.com",
+    "password":"123456"
+}
+
+### LOGIN 
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email":"test@gmail.com",
+    "password":"123456"
+}
+
+### REFRESH TOKEN 
+POST http://localhost:3000/auth/refresh
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTA1OGE2ZjJhZTM0MzM2Y2M2N2YxMWEiLCJpYXQiOjE2Mjc3NTMwNzIsImV4cCI6MTY1OTMxMDY3Mn0.GYqBYz17-zVNap5XXcxJubAVyhin91FicsRoZP8nQG4"
+}
+
+### add todo
+POST http://localhost:3000/api/todos/add
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTA1OGE2ZjJhZTM0MzM2Y2M2N2YxMWEiLCJpYXQiOjE2Mjc3NTMwNzIsImV4cCI6MTYyNzgzOTQ3Mn0.qeA4Y7XSVMXQfe7BGIRGOOOMW2ExLjtmoQM42x0dGcs
+
+Content-Type: application/json
+
+{
+    "userId":"61058a6f2ae34336cc67f11a",
+    "title":"first-todo",
+    "desc":"this my first todo to this user"
+}
