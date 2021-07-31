@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-padding container">
+    <h1>Login</h1>
+
+    <form [formGroup]="formData" class="form-container">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" [disabled]="!formData.valid" class="main-button" (click)="login()">Log in</ion-button>
+
+      <div class="sign-up">
+        Don't have an account? <ion-button color="dark" fill="clear" routerLink="/register" routerDirection="forward">
+          Sign
+          up</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

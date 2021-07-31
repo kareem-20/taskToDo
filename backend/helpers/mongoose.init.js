@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 mongoose.connect(
     process.env.DB_URL, {
     dbName: process.env.DB_NAME,
-    // user: "kareem",
-    // pass: "192001",
+    user: "kareem",
+    pass: "192001",
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify: false,

@@ -14,7 +14,7 @@ const ToDoRoutes = require('./routes/todo.routes');
 
 const { vertifyAccessToken } = require('./helpers/jwt')
 
-app.use(cors())
+app.use(cors({ origin: '*' }))
 app.use(express.json())
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }))

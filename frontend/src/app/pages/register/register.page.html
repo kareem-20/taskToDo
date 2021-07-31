@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-padding container">
+    <h1>Signup</h1>
+
+    <form [formGroup]="formData" class="form-container">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="userName" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+
+      </ion-item>
+
+      <ion-button expand="block" [disabled]="!formData.valid" class="main-button" (click)="register()"
+        class="main-button">Sign Up</ion-button>
+
+      <div class="sign-up">
+        Already have an account? <ion-button color="dark" fill="clear" routerLink="/login" routerDirection="forward">
+          Login</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>
